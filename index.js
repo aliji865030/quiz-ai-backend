@@ -3,18 +3,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
-const apiRoutes = require('./routes/api'); // Adjust the path as necessary
-app.use('/api', apiRoutes); // Make sure this line is present
+const apiRoutes = require('./routes/api'); 
+app.use('/api', apiRoutes); 
 
 
 // Feedback route
@@ -106,7 +103,7 @@ const getRandomFeedback = (score) => {
   };
 
   // Get the array of messages for the given score
-  const messages = feedbackMessages[score] || feedbackMessages[0]; // Default to score 0 messages if score is invalid
+  const messages = feedbackMessages[score] || feedbackMessages[0]; 
 
   // Select a random feedback message
   const randomIndex = Math.floor(Math.random() * messages.length);
