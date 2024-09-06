@@ -37,15 +37,16 @@ return feedback;
 }
 
 // Feedback route
-app.post('/api/feedback', (req, res) => {
+app.post('/api/feedback', async (req, res) => {
   const { score } = req.body;
 
-  // Call the feedback function to get a random feedback message
-  // const feedback = getRandomFeedback(score);
-  const feedback = aiFeedback(score)
-
-  // Send the feedback as a response
-  res.json({ feedback });
+  try {
+    const feedback = await aiFeedback(score);
+    res.json({ feedback });
+  } catch (error) {
+    console.error('Error generating feedback:', error);
+    res.status(500).json({ message: 'Error generating feedback' });
+  }
 });
 
 // Function to get feedback based on score
