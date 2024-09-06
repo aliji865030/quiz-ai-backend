@@ -1,6 +1,7 @@
-const Quiz = require('../models/Quiz');
+// const Quiz = require('../models/Quiz');
+import Quiz from '../models/Quiz.js';
 
-exports.getAllQuizzes = async (req, res) => {
+export const getAllQuizzes = async (req, res) => {
   try {
     const quizzes = await Quiz.find();
     res.json(quizzes);
