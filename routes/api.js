@@ -1,5 +1,3 @@
-// const express = require('express');
-// const Quiz = require('../models/Quiz');
 import express from 'express';
 import Quiz from '../models/Quiz.js';
 const router = express.Router();

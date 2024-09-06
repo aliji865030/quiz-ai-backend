@@ -1,4 +1,3 @@
-// const Quiz = require('../models/Quiz');
 import Quiz from '../models/Quiz.js';
 
 export const getAllQuizzes = async (req, res) => {
