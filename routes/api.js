@@ -1,5 +1,6 @@
 import express from 'express';
 import Quiz from '../models/Quiz.js';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 const router = express.Router();
 
 // Upload quiz
