@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 
 const PORT = 5000;
 
-// const apiRoutes = require('./routes/api'); 
 app.use('/api', apiRoutes); 
 
 
@@ -43,7 +42,7 @@ app.post('/api/feedback', async (req, res) => {
 });
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://abbasalichand786:Baga2BsymsTWvBv4@cluster0.twbzd.mongodb.net/", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://abbasalichand786:Baga2BsymsTWvBv4@cluster0.twbzd.mongodb.net/",)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
